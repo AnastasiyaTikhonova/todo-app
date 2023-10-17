@@ -7,11 +7,13 @@
 }
 
 .header__container {
+  align-items: center;
   margin: 0 auto;
   padding: 5px 20px;
 }
 
 .header__title {
+  font-family: 'Shadows Into Light';
   font-size: 40px;
   letter-spacing: 5px;
   font-weight: bold;
