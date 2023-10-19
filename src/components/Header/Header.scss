@@ -1,15 +1,12 @@
 .header {
-  width: 100%;
-  height: 70px;
-  background: #dd7dea;
-  display: flex;
-  align-items: center;
+  background-color: #e3e1e1;
 }
 
 .header__container {
+  height: 75px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  padding: 5px 20px;
 }
 
 .header__title {
@@ -17,10 +14,13 @@
   font-size: 40px;
   letter-spacing: 5px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 @media (max-width: 767px) {
   .header__title {
     font-size: 30px;
     letter-spacing: 4px;
+    height: 70px;
   }
 }
