@@ -1,20 +1,20 @@
 import React from "react";
+import {DeleteProject} from "../../icons/DeleteProject/DeleteProject";
 import './ProjectList.scss'
 
 const ProjectList = () => {
 
     return(
         <div className="projectList">
-                <ul>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
-                </ul>
+            <div className="container">
+
+            <div className="projectList__add-panel">
+                <input className="projectList__input"/>
+                <button className="projectList__btn">Добавить проект</button>
+            </div>
+
+            </div>
+
         </div>
     )
 }
