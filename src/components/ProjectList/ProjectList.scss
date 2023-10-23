@@ -1,9 +1,8 @@
-
 .projectList {
   flex: 1 1 auto;
   display: flex;
   justify-content: center;
-  //background: url("../img/Background/backForProject.jpg");
+  background: url(backForProject.jpg) 50%/cover no-repeat fixed;
 }
 .container{
   min-width: 70vw;
