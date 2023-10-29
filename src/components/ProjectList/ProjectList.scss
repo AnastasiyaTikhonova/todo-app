@@ -2,48 +2,24 @@
   flex: 1 1 auto;
   display: flex;
   justify-content: center;
-  background: url(backForProject.jpg) 50%/cover no-repeat fixed;
+  background: url("../../img/Background/back.jpg") 50%/cover no-repeat fixed;
+  overflow: hidden;
 }
 .container{
-  min-width: 70vw;
-}
-.projectList__add-panel {
-  margin: 5vh 0;
-  text-align: center;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
 }
 
-.projectList__input {
-  width: 50%;
-  height: calc(2.40rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  border: 1px solid #bdbdbd;
-  border-radius: 0.25rem;
-  margin-right: 20px;
-}
-.projectList__input:focus{
-  color: #212529;
-  background-color: #fff;
-  border-color: #bdbdbd;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+
+.projectList__list{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15%;
+  font-size: 1.5rem;
+  overflow: auto;
 }
 
-.projectList__btn {
-  height: calc(2.25rem + 2px);
-  padding: 0.375rem 0.75rem;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  width: 160px;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 0px 0px 1.5px 1.5px rgb(0,0,0);
-  background-color: #21214b;
-  color: #fff;
+.projectList__list::-webkit-scrollbar {
+  width: 0;
 }

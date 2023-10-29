@@ -2,13 +2,12 @@
   background-color: #e3e1e1;
 }
 
-
-
 .footer__container {
   display: flex;
-  height: 65px;
+  height: 55px;
   justify-content: center;
   align-items: center;
+  box-shadow: 20px 0 0 -13px rgba(246, 246, 246, 1);
 }
 
 .footer__text {

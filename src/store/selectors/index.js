@@ -1,0 +1,1 @@
+export const getProjectItems = (state) => state.projectItems

@@ -1,148 +1,28 @@
 import React from "react";
-import {DeleteProject} from "../../icons/DeleteProject/DeleteProject";
+import AddProjectPanel from "../AddProjectPanel";
+import ProjectItem from "../ProjectItem";
+import { getProjectItems } from "../../store/selectors";
 import './ProjectList.scss'
+import {useSelector} from "react-redux";
 
 const ProjectList = () => {
+    const projectItems = useSelector(getProjectItems)
 
     return(
         <div className="projectList">
             <div className="container">
+                <AddProjectPanel/>
+                <div className="projectList__list">
+                    {
+                        projectItems.map((item) => {
+                            return(
+                                <ProjectItem projectTitle={item.projectTitle} />
+                            )
+                        })
+                    }
 
-            <div className="projectList__add-panel">
-                <input className="projectList__input"/>
-                <button className="projectList__btn">Добавить проект</button>
+                </div>
             </div>
-                <ul>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                    <li>dfghjk</li>
-                </ul>
-
-            </div>
-
         </div>
     )
 }

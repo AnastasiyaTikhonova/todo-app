@@ -1,0 +1,21 @@
+.projectItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-bottom: 40px;;
+}
+.projectItem:last-child{
+  margin-bottom: 10px;
+}
+
+.projectItem__btn{
+  width: 25px;
+  height: 25px;
+  margin: 3px 8px 0px 0px;
+}
+.projectItem__title {
+  flex: 1 1 auto;
+  font-size: 1.7rem;
+  font-family: 'Shadows Into Light';
+  font-style: italic;
+}
