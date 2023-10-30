@@ -1,1 +1,1 @@
-export const getProjectItems = (state) => state.projectItems
+export const getProjectItems = (state) => state.projectReducer.projectItems

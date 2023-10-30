@@ -8,3 +8,9 @@ export const setProjectItems = (items) => {
         },
     }
 }
+
+// export const addProjectItem = (item) => (dispatch, getState) => {
+//     const currProjectItems = getState().projectReducer.projectItems
+//    console.log(currProjectItems)
+//
+// }
