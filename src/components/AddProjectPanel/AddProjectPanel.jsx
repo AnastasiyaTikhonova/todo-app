@@ -1,19 +1,16 @@
 import React, {useState} from "react";
 import './AddProjectPanel.scss'
 
-const AddProjectPanel = ({ projectNameField }) => {
-
-    const [inputName, setInputName ] = useState()
+const AddProjectPanel = ({ projectNameField, addProject }) => {
 
     const getInputName = (e) => {
-        setInputName(e.target.value)
+        projectNameField(e.target.value)
     }
-
 
     return(
         <div className="add-panel">
             <input className="add-panel__input" onChange={getInputName}/>
-            <button className="add-panel__btn" onClick={projectNameField(inputName)}>Добавить проект</button>
+            <button className="add-panel__btn" onClick={addProject}>Добавить проект</button>
         </div>
     )
 }

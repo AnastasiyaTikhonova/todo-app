@@ -9,18 +9,27 @@ import { nanoid } from "nanoid";
 
 const ProjectList = () => {
     const projectItems = useSelector(getProjectItems)
-    const dispatch = useDispatch()
     const [projectName, setProjectName] = useState()
+    const dispatch = useDispatch()
 
-    const addProject = (name) => {
-        setProjectName(name)
-        console.log(projectName)
+    const checkValidName = (name) => {
+        if(name.trim) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    const addProject = () => {
+        if(checkValidName(projectName)) {
+            dispatch(addProjectItem(nanoid(), projectName))
+        }
     }
 
     return(
         <div className="projectList">
             <div className="container">
-                <AddProjectPanel projectNameField={addProject}/>
+                <AddProjectPanel projectNameField={setProjectName} addProject={addProject}/>
                 <div className="projectList__list">
                     {
                         projectItems.map((item) => {

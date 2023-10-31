@@ -14,5 +14,4 @@ export const addProjectItem = (id, projectTitle) => (dispatch, getState) => {
     const currProjectList = getState().projectReducer.projectItems
     const newProjectList = currProjectList.push({ id, projectTitle})
     dispatch(setProjectItems(newProjectList))
-
 }
