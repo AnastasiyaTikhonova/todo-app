@@ -1,4 +1,5 @@
 import { TYPES } from "../actionTypes";
+import { nanoid} from "nanoid";
 
 export const setProjectItems = (items) => {
     return{
@@ -9,9 +10,18 @@ export const setProjectItems = (items) => {
     }
 }
 
-export const addProjectItem = (id, projectTitle) => (dispatch, getState) => {
+export const addProjectItem = (projectTitle) => {
 
-    const currProjectList = getState().projectReducer.projectItems
-    const newProjectList = currProjectList.push({ id, projectTitle})
-    dispatch(setProjectItems(newProjectList))
+    // const currProjectList = getState().projectReducer.projectItems
+    // const newProjectList = [{ id, projectTitle}, ...currProjectList]
+    // dispatch(setProjectItems(newProjectList))
+
+    const id = nanoid()
+
+    return{
+        type: TYPES.DELETE_PROJECT_ITEM,
+        payload: {
+            id, projectTitle
+        }
+    }
 }

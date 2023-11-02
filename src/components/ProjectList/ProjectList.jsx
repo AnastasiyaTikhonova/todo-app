@@ -5,24 +5,17 @@ import { getProjectItems } from "../../store/selectors";
 import { addProjectItem } from "../../store/actions/projectAction";
 import './ProjectList.scss'
 import {useDispatch, useSelector} from "react-redux";
-import { nanoid } from "nanoid";
 
 const ProjectList = () => {
     const projectItems = useSelector(getProjectItems)
-    const [projectName, setProjectName] = useState()
+    const [projectName, setProjectName] = useState('')
     const dispatch = useDispatch()
 
-    const checkValidName = (name) => {
-        if(name.trim) {
-            return true
-        } else {
-            return false
-        }
-    }
-
     const addProject = () => {
-        if(checkValidName(projectName)) {
-            dispatch(addProjectItem(nanoid(), projectName))
+        const _prName = projectName.trim()
+
+        if(_prName.length) {
+            dispatch(addProjectItem(_prName))
         }
     }
 
