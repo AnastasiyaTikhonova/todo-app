@@ -16,18 +16,27 @@ const ProjectList = () => {
 
         if(_prName.length) {
             dispatch(addProjectItem(_prName))
+            setProjectName('')
         }
     }
 
     return(
         <div className="projectList">
             <div className="container">
-                <AddProjectPanel projectNameField={setProjectName} addProject={addProject}/>
+                <AddProjectPanel
+                    projectNameField={setProjectName}
+                    addProject={addProject}
+                    value={projectName}
+                />
                 <div className="projectList__list">
                     {
                         projectItems.map((item) => {
                             return(
-                                <ProjectItem projectTitle={item.projectTitle} key={item.id} />
+                                <ProjectItem
+                                    key={item.id}
+                                    projectTitle={item.projectTitle}
+                                    id={item.id}
+                                />
                             )
                         })
                     }

@@ -11,17 +11,21 @@ export const setProjectItems = (items) => {
 }
 
 export const addProjectItem = (projectTitle) => {
-
-    // const currProjectList = getState().projectReducer.projectItems
-    // const newProjectList = [{ id, projectTitle}, ...currProjectList]
-    // dispatch(setProjectItems(newProjectList))
-
     const id = nanoid()
 
     return{
+        type: TYPES.SET_PROJECT_ITEM,
+        payload: {
+            id, projectTitle,
+        },
+    }
+}
+
+export const deleteProjectItem = (id) => {
+    return{
         type: TYPES.DELETE_PROJECT_ITEM,
         payload: {
-            id, projectTitle
-        }
+            id,
+        },
     }
 }
