@@ -8,7 +8,6 @@ const ProjectItem = ({ projectTitle, id}) => {
     const dispatch = useDispatch()
 
     const deleteProject = () => {
-        console.log(id)
         dispatch(deleteProjectItem(id))
     }
 
