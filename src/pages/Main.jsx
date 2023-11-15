@@ -3,6 +3,7 @@ import Projects from "../containers/Projects";
 import {useDispatch} from "react-redux";
 import Storage from "../helpers/Storage";
 import {setProjectItems} from "../store/actions/projectAction";
+import Tasks from "../containers/Tasks/Tasks";
 
 const Main = () => {
     const dispatch = useDispatch()
@@ -19,7 +20,8 @@ const Main = () => {
     }, [])
 
     return(
-        <Projects />
+        //<Projects />
+        <Tasks/>
     )
 }
 

@@ -1,0 +1,11 @@
+.taskPage{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.taskContainer {
+ flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+}

@@ -1,11 +1,7 @@
 import { TYPES } from "../actionTypes";
 
 const defaultState = {
-    projectItems: [ {id: 1, projectTitle: "Проект номер 1"},
-                    {id: 2, projectTitle: "Проект номер 2"},
-                    {id: 3, projectTitle: "Проект номер 3"},
-                    {id: 4, projectTitle: "Проект номер 4"}
-    ]
+    projectItems: []
 }
 
 export const projectReducer = (state = defaultState, { type, payload }) => {
