@@ -20,8 +20,8 @@ const Main = () => {
     }, [])
 
     return(
-        //<Projects />
-        <Tasks/>
+        <Projects />
+        //<Tasks/>
     )
 }
 

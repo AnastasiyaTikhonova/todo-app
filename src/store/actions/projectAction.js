@@ -4,14 +4,6 @@ import Storage from "../../helpers/Storage";
 
 
 export const setProjectItems = (items) => {
-    // let projectList = []
-    // Storage.getProjectItems().then(function (projects) {
-    //     projects.forEach((project) => {
-    //         projectList.push(project)
-    //     })
-    // }, function () {
-    //     console.log('Нет проектов')
-    // })
     return{
         type: TYPES.SET_PROJECT_ITEMS,
         payload: {

@@ -1,3 +1,47 @@
 .taskList {
+  width: 100%;
+}
+
+.addPanel {
+  display: flex;
+  padding: 4vh 5vw;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  box-sizing: border-box;
+  width: 35vw;
+  height: calc(2.25rem + 2px);
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 18px;
+  line-height: 30px;
+  align-items: center;
+  letter-spacing: 0.1em;
+  border: 2px solid #b7b4b4;
+  margin-right: 1vw;
+  margin-bottom: 5px;
+}
+.searchInput:focus{
+  border: 2px solid #7c7979;
+  box-shadow:inset 0 0 3px 3px #cbc9c9;
+}
+.addTaskButton{
   flex: 1 1 auto;
+  display: flex;
+  justify-content: end;
+}
+@media (max-width: 767px) {
+  .addTaskButton{
+    justify-content: start;
+  }
+}
+
+.vertical {
+  padding: 50px 0;
+}
+
+.vertical__body {
+  display: flex;
 }

@@ -1,13 +1,6 @@
 .taskDescription{
   min-width: 25vw;
-}
-
-.taskDescription::after{
-  content: '';
-  display: inline-flex;
-  left: 25vw;
-  position: absolute;
-  width: 2px;
-  height: calc(100vh - 130px);
-  background-color: #e3e1e1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 2px 4px #cbc9c9;
 }

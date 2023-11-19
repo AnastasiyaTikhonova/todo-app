@@ -10,8 +10,11 @@ const Tasks = () => {
         <div className="taskPage">
             <Header/>
             <div className="taskContainer">
-                <TaskDescription/>
-                <TaskList/>
+                <div className="taskPage__row">
+                    <TaskDescription/>
+                    <TaskList/>
+                </div>
+
             </div>
             <Footer/>
         </div>
