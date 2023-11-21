@@ -1,4 +1,4 @@
-class Storage {
+class ProjectStorage {
      openRequest = null
 
     constructor() {
@@ -46,4 +46,4 @@ class Storage {
          })
      }
 }
-export default new Storage();
+export default new ProjectStorage();

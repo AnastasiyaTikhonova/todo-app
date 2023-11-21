@@ -22,3 +22,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.projectItem__title:hover{
+  text-shadow: 0 0 3px #6e6b6b;
+  color: #21214b;
+  cursor: pointer;
+}

@@ -1,7 +1,7 @@
 import { TYPES } from "../actionTypes";
 
 const defaultState = {
-    id,
+    projectId: null,
     taskItems: [{
             taskId: 1,
             taskTitle: "Полить цветы",
@@ -24,13 +24,14 @@ export const taskReducer = (state = defaultState, {type, payload}) => {
         case TYPES.ADD_TASK:
             return {
                 ...state,
-                taskTitle: payload.taskTitle
+                taskItems: payload.taskItems
 
             }
-        case TYPES.GET_TASKS:
+        case TYPES.GET_TASK_PAGE:
             return {
                 ...state,
-                taskTitle: payload.taskItems
+                projectId: payload.projectId,
+                taskItems: payload.taskItems,
 
             }
 

@@ -1,6 +1,6 @@
 import { TYPES } from "../actionTypes";
 import { nanoid } from "nanoid";
-import Storage from "../../helpers/Storage";
+import ProjectDB from "../../helpers/ProjectStorage/ProjectStorage";
 
 
 export const setProjectItems = (items) => {
@@ -14,7 +14,7 @@ export const setProjectItems = (items) => {
 
 export const addProjectItem = (projectTitle) => {
     const id = nanoid()
-    Storage.addProjectItem({id, projectTitle})
+    ProjectDB.addProjectItem({id, projectTitle})
     return{
         type: TYPES.SET_PROJECT_ITEM,
         payload: {
@@ -24,7 +24,7 @@ export const addProjectItem = (projectTitle) => {
 }
 
 export const deleteProjectItem = (id) => {
-    Storage.deleteProjectItem(id)
+    ProjectDB.deleteProjectItem(id)
     return{
         type: TYPES.DELETE_PROJECT_ITEM,
         payload: {
