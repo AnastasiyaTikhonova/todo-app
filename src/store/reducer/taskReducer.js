@@ -1,6 +1,7 @@
 import { TYPES } from "../actionTypes";
 
 const defaultState = {
+    isTaskPage: false,
     projectId: null,
     taskItems: [{
             taskId: 1,
@@ -30,6 +31,7 @@ export const taskReducer = (state = defaultState, {type, payload}) => {
         case TYPES.GET_TASK_PAGE:
             return {
                 ...state,
+                isTaskPage: true,
                 projectId: payload.projectId,
                 taskItems: payload.taskItems,
 

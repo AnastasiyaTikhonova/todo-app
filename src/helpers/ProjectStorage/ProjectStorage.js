@@ -12,6 +12,7 @@ class ProjectStorage {
         }
      }
 
+
      addProjectItem(projectItem) {
          const transaction = this.openRequest.result.transaction("ProjectStore", "readwrite");//создали транзакцию
         const projects = transaction.objectStore("ProjectStore");//получили хранилище

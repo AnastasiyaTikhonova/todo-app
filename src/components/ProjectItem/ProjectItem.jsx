@@ -12,8 +12,8 @@ const ProjectItem = ({ projectTitle, id }) => {
         dispatch(deleteProjectItem(id))
     }
 
-    const getTasks = (itemId) => {
-        dispatch(getTaskPage(itemId))
+    const getTasks = () => {
+        dispatch(getTaskPage(id))
     }
 
     return(
@@ -21,7 +21,7 @@ const ProjectItem = ({ projectTitle, id }) => {
             <div className="projectItem__btn" onClick={deleteProject}>
                 <DeleteProject />
             </div>
-            <div className="projectItem__title" onClick={() => getTasks(id)}>{projectTitle}</div>
+            <div className="projectItem__title" onClick={getTasks}>{projectTitle}</div>
         </div>
     )
 }

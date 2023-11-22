@@ -14,6 +14,8 @@ class TaskStorage{
         }
     }
 
+
+
     addTaskItem(taskItem) {
         const transaction = this.openRequest.result.transaction(this.id, "readwrite");//создали транзакцию
         const projects = transaction.objectStore(this.id);//получили хранилище
