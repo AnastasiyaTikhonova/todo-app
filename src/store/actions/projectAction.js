@@ -2,7 +2,6 @@ import { TYPES } from "../actionTypes";
 import { nanoid } from "nanoid";
 import ProjectDB from "../../helpers/ProjectStorage/ProjectStorage";
 
-
 export const setProjectItems = (items) => {
     return{
         type: TYPES.SET_PROJECT_ITEMS,

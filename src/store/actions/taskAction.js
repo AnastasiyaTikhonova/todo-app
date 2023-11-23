@@ -2,13 +2,11 @@ import {TYPES} from "../actionTypes";
 import TaskStorage from "../../helpers/TaskStorage/TaskStorage";
 
 export const getTaskPage = (id) => {
-
     let tasksArr = null
 
     TaskStorage.getTaskItems().then(function (tasks) {
         tasksArr = tasks
-        console.log('id from action', id)
-        console.log('tasks from action', tasksArr)
+        console.log(tasksArr)
     }, function () {
         console.log('Запрос не выполнен')
     })
@@ -16,8 +14,18 @@ export const getTaskPage = (id) => {
     return {
         type: TYPES.GET_TASK_PAGE,
         payload: {
+            isTaskPage: true,
             projectId: id,
-            taskItems: tasksArr,
+            taskItems: [tasksArr]
+        }
+    }
+}
+
+export const getProjectPage = () => {
+    return{
+        type: TYPES.GET_PROJECT_PAGE,
+        payload: {
+            isTaskPage: false
         }
     }
 }

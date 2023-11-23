@@ -1,31 +1,15 @@
 class TaskStorage{
     openRequest = null
-    id = null
 
-    constructor(id) {
+    constructor() {
         const openRequest = indexedDB.open("TaskDb", 1);
         this.openRequest = openRequest
-        this.id = id
         openRequest.onupgradeneeded = function () {
             const db = openRequest.result
-            if (!db.objectStoreNames.contains(id)) { // если хранилище с указанным id не существует
-                db.createObjectStore(id, {keyPath: 'id'}); // создаём хранилище
+            if (!db.objectStoreNames.contains("tasks")) { // если хранилище с указанным id не существует
+                db.createObjectStore("tasks", {keyPath: 'id'}); // создаём хранилище
             }
         }
-    }
-
-
-
-    addTaskItem(taskItem) {
-        const transaction = this.openRequest.result.transaction(this.id, "readwrite");//создали транзакцию
-        const projects = transaction.objectStore(this.id);//получили хранилище
-        projects.add(taskItem)
-    }
-
-    deleteTaskItem(itemId) {
-        const transaction = this.openRequest.result.transaction(this.id, "readwrite");//создали транзакцию
-        const projects = transaction.objectStore(this.id);//получили хранилище
-        projects.delete(itemId)
     }
 
     getTaskItems() {
@@ -33,8 +17,9 @@ class TaskStorage{
             const openRequest = indexedDB.open("TaskDb")
             openRequest.onsuccess = function () {
                 const db = openRequest.result;
-                const transaction = db.transaction(this.id);
-                const tasks = transaction.objectStore(this.id);
+                console.log('db', db)
+                const transaction = db.transaction("tasks");
+                const tasks = transaction.objectStore("tasks");
                 const taskStoreRequest = tasks.getAll();
                 let store = null;
 
@@ -52,3 +37,4 @@ class TaskStorage{
 }
 
 export default new TaskStorage();
+

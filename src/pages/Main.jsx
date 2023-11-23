@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect } from "react";
 import Projects from "../containers/Projects";
 import {useDispatch, useSelector} from "react-redux";
 import ProjectStorage from "../helpers/ProjectStorage/ProjectStorage";
-import TaskStorage from "../helpers/TaskStorage/TaskStorage";
 import {setProjectItems} from "../store/actions/projectAction";
 import Tasks from "../containers/Tasks/Tasks";
 import {getIsTaskPage, getProjectId} from "../store/selectors";
@@ -12,8 +11,6 @@ const Main = () => {
     const dispatch = useDispatch()
     const isTaskPage = useSelector(getIsTaskPage)
     const projectId = useSelector(getProjectId)
-
-    console.log('isTaskPage', isTaskPage)
 
     useEffect(() => {
         ProjectStorage.getProjectItems().then(function (projects) {
@@ -27,15 +24,9 @@ const Main = () => {
     }, [])
 
     useEffect(() => {
-
-            TaskStorage.getTaskItems().then(function (tasks) {
-                if(tasks){
-                    dispatch(getTaskPage(projectId))
-                }
-            }, function () {
-                console.log('Нет задач')
-            })
-
+        if(isTaskPage){
+            dispatch(getTaskPage(projectId))
+        }
     }, [])
 
     return isTaskPage ? <Tasks/> : <Projects />

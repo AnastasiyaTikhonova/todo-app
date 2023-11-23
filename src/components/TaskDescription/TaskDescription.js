@@ -1,18 +1,15 @@
 import React from "react";
 import './TaskDescription.scss';
-import {useDispatch, useSelector} from "react-redux";
-import {getProjectItems} from "../../store/selectors";
-import {setProjectItems} from "../../store/actions/projectAction";
+import { useDispatch } from "react-redux";
+import { getProjectPage } from "../../store/actions/taskAction";
 
 const TaskDescription = () => {
-    // const projectItems = useSelector(getProjectItems)
-    // const dispatch = useDispatch()
+     const dispatch = useDispatch()
 
     const backToProjectPage = () => {
-        // dispatch(setProjectItems(projectItems))
-        console.log('BackTo Project Page')
-
+        dispatch(getProjectPage())
     }
+
     return(
         <div className="taskDescription">TaskDescription
             <button onClick={backToProjectPage}>Назад</button>
