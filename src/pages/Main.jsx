@@ -24,9 +24,7 @@ const Main = () => {
     }, [])
 
     useEffect(() => {
-        if(isTaskPage){
-            dispatch(getTaskPage(projectId))
-        }
+
     }, [])
 
     return isTaskPage ? <Tasks/> : <Projects />

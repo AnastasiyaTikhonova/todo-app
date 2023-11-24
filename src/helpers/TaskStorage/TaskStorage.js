@@ -1,40 +1,41 @@
-class TaskStorage{
+export default class TaskStorage{
     openRequest = null
 
-    constructor() {
-        const openRequest = indexedDB.open("TaskDb", 1);
+    constructor(id) {
+        const openRequest = indexedDB.open(id, 1);
         this.openRequest = openRequest
+        this.id = id
         openRequest.onupgradeneeded = function () {
             const db = openRequest.result
-            if (!db.objectStoreNames.contains("tasks")) { // если хранилище с указанным id не существует
-                db.createObjectStore("tasks", {keyPath: 'id'}); // создаём хранилище
+            if (!db.objectStoreNames.contains(id)) {
+                db.createObjectStore(id, {keyPath: 'id'});
             }
         }
     }
 
-    getTaskItems() {
+   getTaskItems(id) {
         return new Promise(function (resolve, reject) {
-            const openRequest = indexedDB.open("TaskDb")
+            const openRequest = indexedDB.open(id, 1);
             openRequest.onsuccess = function () {
                 const db = openRequest.result;
-                console.log('db', db)
-                const transaction = db.transaction("tasks");
-                const tasks = transaction.objectStore("tasks");
-                const taskStoreRequest = tasks.getAll();
-                let store = null;
+                    const transaction = db.transaction(id);
+                    const tasks = transaction.objectStore(id);
+                    const taskStoreRequest = tasks.getAll();
+                    let store = null;
 
-                taskStoreRequest.onsuccess = function (e) {
-                    store = taskStoreRequest.result
-                    resolve(store)
+                    taskStoreRequest.onsuccess = function (e) {
+                        store = taskStoreRequest.result
+                        console.log('store from api', store)
+                        resolve(store)
+                    }
+                    transaction.oncomplete = function (e) {
+                        db.close()
+                        resolve(store)
+                    }
                 }
-                transaction.oncomplete = function (e) {
-                    db.close()
-                    resolve(store)
-                }
-            }
-        })
-    }
+            })
+   }
 }
 
-export default new TaskStorage();
+
 

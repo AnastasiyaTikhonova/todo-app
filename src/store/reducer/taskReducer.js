@@ -39,7 +39,8 @@ export const taskReducer = (state = defaultState, {type, payload}) => {
         case TYPES.GET_PROJECT_PAGE:
             return {
                 ...state,
-                isTaskPage: payload.isTaskPage
+                isTaskPage: payload.isTaskPage,
+                projectId: payload.projectId
             }
 
         default: return state

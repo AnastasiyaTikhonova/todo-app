@@ -3,8 +3,9 @@ import TaskStorage from "../../helpers/TaskStorage/TaskStorage";
 
 export const getTaskPage = (id) => {
     let tasksArr = null
+    let db = new TaskStorage(id)
 
-    TaskStorage.getTaskItems().then(function (tasks) {
+    db.getTaskItems(id).then(function (tasks) {
         tasksArr = tasks
         console.log(tasksArr)
     }, function () {
@@ -25,7 +26,8 @@ export const getProjectPage = () => {
     return{
         type: TYPES.GET_PROJECT_PAGE,
         payload: {
-            isTaskPage: false
+            isTaskPage: false,
+            projectId: null,
         }
     }
 }

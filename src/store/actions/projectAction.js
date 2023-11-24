@@ -1,6 +1,7 @@
 import { TYPES } from "../actionTypes";
 import { nanoid } from "nanoid";
 import ProjectDB from "../../helpers/ProjectStorage/ProjectStorage";
+import TaskStorage from "../../helpers/TaskStorage/TaskStorage";
 
 export const setProjectItems = (items) => {
     return{
