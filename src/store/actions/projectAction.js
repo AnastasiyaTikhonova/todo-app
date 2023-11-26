@@ -1,9 +1,8 @@
 import { TYPES } from "../actionTypes";
 import { nanoid } from "nanoid";
-import ProjectDB from "../../helpers/ProjectStorage/ProjectStorage";
-import TaskStorage from "../../helpers/TaskStorage/TaskStorage";
+import Storage from "../../helpers/Storage";
 
-export const setProjectItems = (items) => {
+export const setProjectItems = (items) => { //выводит список всех проектов
     return{
         type: TYPES.SET_PROJECT_ITEMS,
         payload: {
@@ -12,19 +11,20 @@ export const setProjectItems = (items) => {
     }
 }
 
-export const addProjectItem = (projectTitle) => {
+export const addProjectItem = (projectTitle) => { // добавляет проект
     const id = nanoid()
-    ProjectDB.addProjectItem({id, projectTitle})
+    const tasks = []
+    Storage.addProjectItem({id, projectTitle, tasks})
     return{
-        type: TYPES.SET_PROJECT_ITEM,
+        type: TYPES.ADD_PROJECT_ITEM,
         payload: {
-            id, projectTitle,
+            id, projectTitle, tasks
         },
     }
 }
 
-export const deleteProjectItem = (id) => {
-    ProjectDB.deleteProjectItem(id)
+export const deleteProjectItem = (id) => {  //  удаляет проект
+    Storage.deleteProjectItem(id)
     return{
         type: TYPES.DELETE_PROJECT_ITEM,
         payload: {

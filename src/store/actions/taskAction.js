@@ -1,15 +1,13 @@
 import {TYPES} from "../actionTypes";
-import TaskStorage from "../../helpers/TaskStorage/TaskStorage";
+import Storage from "../../helpers/Storage";
 
-export const getTaskPage = (id) => {
-    let tasksArr = null
-    let db = new TaskStorage(id)
-
-    db.getTaskItems(id).then(function (tasks) {
-        tasksArr = tasks
-        console.log(tasksArr)
+export const getTasks = (id) => {
+     let tasksArr = null
+    Storage.getStore().then(function (storeItems) {
+        const item = storeItems.filter((storeItem) => storeItem.id == id)
+        tasksArr = item[0].tasks
     }, function () {
-        console.log('Запрос не выполнен')
+        console.log('Нет задач')
     })
 
     return {

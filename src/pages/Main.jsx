@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Projects from "../containers/Projects";
 import {useDispatch, useSelector} from "react-redux";
-import ProjectStorage from "../helpers/ProjectStorage/ProjectStorage";
+import Storage from "../helpers/Storage";
 import {setProjectItems} from "../store/actions/projectAction";
 import Tasks from "../containers/Tasks/Tasks";
 import {getIsTaskPage, getProjectId} from "../store/selectors";
-import {getTaskPage} from "../store/actions/taskAction";
+import {getTasks} from "../store/actions/taskAction";
 
 const Main = () => {
     const dispatch = useDispatch()
@@ -13,7 +13,7 @@ const Main = () => {
     const projectId = useSelector(getProjectId)
 
     useEffect(() => {
-        ProjectStorage.getProjectItems().then(function (projects) {
+        Storage.getStore().then(function (projects) {
             if(projects.length){
                 dispatch(setProjectItems(projects))
             }
@@ -24,7 +24,9 @@ const Main = () => {
     }, [])
 
     useEffect(() => {
-
+        if (isTaskPage) {
+            dispatch(getTasks(projectId))
+        }
     }, [])
 
     return isTaskPage ? <Tasks/> : <Projects />

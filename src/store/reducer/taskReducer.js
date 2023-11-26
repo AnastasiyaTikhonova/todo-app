@@ -3,21 +3,13 @@ import { TYPES } from "../actionTypes";
 const defaultState = {
     isTaskPage: false,
     projectId: null,
-    taskItems: [{
-            taskId: 1,
-            taskTitle: "Полить цветы",
-            taskLevel: 1,
-        },
-        {
-            taskId: 2,
-            taskTitle: "Посадить цветы",
-            taskLevel: 2,
-        },
-        {
-            taskId: 3,
-            taskTitle: "Пересадить цветы",
-            taskLevel: 3,
-        }],
+    taskItems: [    {title: 'jk,mfnhdjdlf', description: "wdbhrtjeiod", currStatus: 'queue',},
+                    {title: 'ffffeeeeeee', description: "whsrthtrbbsod", currStatus: 'development',},
+                    {title: 'jhhhhhh', description: "wbndtyrsiod", currStatus: 'done',},
+                    {title: 'jqqqqqqqf', description: "wadn gfbbvod", currStatus: 'development',},
+                    {title: 'vvvvvv', description: "d  fsbg", currStatus: 'done',},
+                    {title: 'jk,mfnhdjdlf', description: "wdbhrtjeiod", currStatus: 'done',},
+            ]
 }
 
 export const taskReducer = (state = defaultState, {type, payload}) => {
