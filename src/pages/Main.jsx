@@ -4,13 +4,10 @@ import {useDispatch, useSelector} from "react-redux";
 import Storage from "../helpers/Storage";
 import {setProjectItems} from "../store/actions/projectAction";
 import Tasks from "../containers/Tasks/Tasks";
-import {getIsTaskPage, getProjectId} from "../store/selectors";
-import {getTasks} from "../store/actions/taskAction";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
 const Main = () => {
     const dispatch = useDispatch()
-    const isTaskPage = useSelector(getIsTaskPage)
-    const projectId = useSelector(getProjectId)
 
     useEffect(() => {
         Storage.getStore().then(function (projects) {
@@ -23,13 +20,15 @@ const Main = () => {
 
     }, [])
 
-    useEffect(() => {
-        if (isTaskPage) {
-            dispatch(getTasks(projectId))
-        }
-    }, [])
-
-    return isTaskPage ? <Tasks/> : <Projects />
+    return(
+        <Router>
+            <Routes>
+                <Route exact path="/" element={<Projects />} />
+                <Route path="/tasks/:id" element={<Tasks />} />
+                <Route path="*" element={<Navigate to="/" />}/>
+            </Routes>
+        </Router>
+        )
 }
 
 export default Main;

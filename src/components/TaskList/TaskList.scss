@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+@media (max-width: 900px) {
+  .taskList{
+    overflow: auto;
+  }
+}
+
 .addPanel {
   display: flex;
   padding: 4vh 5vw;

@@ -21,7 +21,7 @@ const Tasks = () => {
             </div>
             <Footer/>
             <Modal active={modalActive} setActive={setModalActive}>
-                
+
             </Modal>
         </div>
     )

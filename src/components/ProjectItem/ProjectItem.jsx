@@ -4,9 +4,11 @@ import { DeleteProject} from "../../icons/DeleteProject/DeleteProject";
 import '../ProjectItem/ProjectItem.scss'
 import {useDispatch} from "react-redux";
 import {getTasks} from "../../store/actions/taskAction";
+import { useNavigate} from "react-router-dom";
 
 const ProjectItem = ({ projectTitle, id }) => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const deleteProject = () => {
         dispatch(deleteProjectItem(id))
@@ -14,6 +16,7 @@ const ProjectItem = ({ projectTitle, id }) => {
 
     const getTaskPage = () => {
         dispatch(getTasks(id))
+        navigate(`/tasks/&{id}`)
     }
 
     return(
