@@ -21,7 +21,22 @@ const Tasks = () => {
             </div>
             <Footer/>
             <Modal active={modalActive} setActive={setModalActive}>
+                <form className='form'>
+                    <label htmlFor="title">Заголовок</label>
+                    <input id="title"/>
+                    <label htmlFor="description">Описание</label>
+                    <textarea id="description"/>
 
+                    <p>Приоритет</p>
+
+
+                    <input id="priority" type="checkbox" value="yes"/>
+                    <label id="priorityLabel">Важно</label>
+
+
+
+
+                </form>
             </Modal>
         </div>
     )

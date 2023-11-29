@@ -20,23 +20,23 @@
 }
 
 .closeModalBtn{
-  width: 80px;
-  height: 80px;
-  align-self: end;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
+  margin-left: auto;
 }
 
 .modal__content {
-  padding: 20px;
+  padding: 30px;
   border-radius: 12px;
   background-color: white;
-  display: inline-block;
   width: 70vw;
   height: 60vh;
   align-self: center;
-  margin-top: 10vh;
+  margin-top: 5vh;
   transform: scale(0.5);
   transition: 0.4s all;
+  overflow: auto;
 }
 
 .modal__content.active{
